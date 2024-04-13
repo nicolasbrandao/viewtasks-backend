@@ -14,8 +14,8 @@ export class UsersService {
     return this.databaseService.user.findMany({});
   }
 
-  async findOne(id: string) {
-    return this.databaseService.user.findUnique({ where: { id } });
+  async findOne(email: string) {
+    return this.databaseService.user.findUnique({ where: { email } });
   }
 
   update(id: string, updateUserDto: Prisma.UserUpdateInput) {
