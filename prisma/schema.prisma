@@ -14,7 +14,24 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id          String      @id @default(cuid())
+  email       String      @unique
+  name        String?
+  tasksLists  TasksList[]
 }
+
+model TasksList {
+  id          String      @id @default(cuid())
+  userId      String
+  tasks       Task[]
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Task {
+  id          String      @id @default(cuid())
+  tasksListId String
+  title       String
+  completed   Boolean     @default(false)
+  tasksList   TasksList   @relation(fields: [tasksListId], references: [id], onDelete: Cascade)
+}
+
