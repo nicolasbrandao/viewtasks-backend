@@ -14,6 +14,12 @@ export class TasksService {
     return this.databaseService.task.findMany();
   }
 
+  async findAllByTasksListId(tasksListId: string) {
+    return this.databaseService.task.findMany({
+      where: { tasksListId },
+    });
+  }
+
   findOne(id: string) {
     return this.databaseService.task.findUnique({ where: { id } });
   }
