@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { TaskslistsService } from './tasks-lists.service';
 import { Prisma } from '@prisma/client';
@@ -20,8 +21,12 @@ export class TaskslistsController {
   }
 
   @Get()
-  findAll() {
-    return this.taskslistsService.findAll();
+  findAll(@Query('userId') userId?: string) {
+    if (userId) {
+      return this.taskslistsService.findAllByUserId(userId);
+    } else {
+      return this.taskslistsService.findAll();
+    }
   }
 
   @Get(':id')
