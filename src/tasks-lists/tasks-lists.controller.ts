@@ -22,11 +22,11 @@ export class TaskslistsController {
 
   @Get()
   findAll(@Query('userId') userId?: string) {
-    if (userId) {
-      return this.taskslistsService.findAllByUserId(userId);
-    } else {
+    if (!userId) {
       return this.taskslistsService.findAll();
     }
+
+    return this.taskslistsService.findAllByUserId(userId);
   }
 
   @Get(':id')
