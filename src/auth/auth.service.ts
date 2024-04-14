@@ -16,7 +16,8 @@ export class AuthService {
     password,
   }: AuthPayloadDto): Promise<{ access_token: string }> {
     const user = await this.usersService.findOne(email);
-    const isMatch = await bcrypt.compare(user?.password, password);
+    const isMatch = bcrypt.compareSync(password, user.password);
+
     if (!isMatch) {
       throw new UnauthorizedException();
     }
