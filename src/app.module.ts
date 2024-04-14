@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { TaskslistsModule } from './taskslists/taskslists.module';
+import { TaskslistsModule } from './tasks-lists/tasks-lists.module';
 import { TasksModule } from './tasks/tasks.module';
 import { AuthMiddleware } from 'middlewares/auth.middleware';
 
@@ -21,6 +21,6 @@ import { AuthMiddleware } from 'middlewares/auth.middleware';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(AuthMiddleware).forRoutes('taskslists');
+    consumer.apply(AuthMiddleware).forRoutes('tasks-lists');
   }
 }

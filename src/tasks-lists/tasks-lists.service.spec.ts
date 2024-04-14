@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { TaskslistsService } from './taskslists.service';
+import { TaskslistsService } from './tasks-lists.service';
 
 describe('TaskslistsService', () => {
   let service: TaskslistsService;

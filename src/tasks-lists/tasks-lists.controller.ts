@@ -7,10 +7,10 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { TaskslistsService } from './taskslists.service';
+import { TaskslistsService } from './tasks-lists.service';
 import { Prisma } from '@prisma/client';
 
-@Controller('taskslists')
+@Controller('tasks-lists')
 export class TaskslistsController {
   constructor(private readonly taskslistsService: TaskslistsService) {}
 
