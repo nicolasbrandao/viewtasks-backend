@@ -7,10 +7,13 @@ import {
   Param,
   Delete,
   Query,
+  UseGuards,
 } from '@nestjs/common';
 import { TaskslistsService } from './tasks-lists.service';
 import { Prisma } from '@prisma/client';
+import { AuthGuard } from 'src/auth/auth.guard';
 
+@UseGuards(AuthGuard)
 @Controller('tasks-lists')
 export class TaskslistsController {
   constructor(private readonly taskslistsService: TaskslistsService) {}
