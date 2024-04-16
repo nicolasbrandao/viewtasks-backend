@@ -71,3 +71,56 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+<!-- Documentation Checklist -->
+## Description
+
+<!-- Brief Project Description -->
+
+## Usage
+
+<!-- How to run and use your project? -->
+
+```sh
+# install dependencies
+pnpm i
+
+# migrate db
+pnpm db:migrate dev
+
+# start server
+pnpm start:dev
+```
+
+```sh
+# get users
+curl https://...
+
+# get task list
+curl https://...
+
+# get tasks
+curl https://...
+```
+
+## Technical Description
+
+### Tech Stack
+
+<!-- add the stack infos and links -->
+
+### Code Organization
+
+<!-- how your code is organized? -->
+
+### Tech Challanges
+
+<!-- highlight the chalanges you faced duding development -->
+
+### Improvements / Next Steps
+
+<!-- checklist of items to improve on upcoming interactions -->
+
+### References
+
+<!-- optional: useful links -->

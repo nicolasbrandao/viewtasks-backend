@@ -25,10 +25,6 @@ export class TasksController {
 
   @Get()
   findAll(@Query('tasksListId') tasksListId?: string) {
-    if (!tasksListId) {
-      return this.tasksService.findAll();
-    }
-
     return this.tasksService.findAllByTasksListId(tasksListId);
   }
 

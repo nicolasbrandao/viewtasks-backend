@@ -10,10 +10,6 @@ export class TasksService {
     return this.databaseService.task.create({ data: createTaskDto });
   }
 
-  findAll() {
-    return this.databaseService.task.findMany();
-  }
-
   async findAllByTasksListId(tasksListId: string) {
     return this.databaseService.task.findMany({
       where: { tasksListId },
