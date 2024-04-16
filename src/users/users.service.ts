@@ -19,22 +19,7 @@ export class UsersService {
     });
   }
 
-  async findAll() {
-    return this.databaseService.user.findMany({});
-  }
-
   async findOne(email: string) {
     return this.databaseService.user.findUnique({ where: { email } });
-  }
-
-  update(id: string, updateUserDto: Prisma.UserUpdateInput) {
-    return this.databaseService.user.update({
-      where: { id },
-      data: updateUserDto,
-    });
-  }
-
-  remove(id: string) {
-    return this.databaseService.user.delete({ where: { id } });
   }
 }

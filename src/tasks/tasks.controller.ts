@@ -32,11 +32,6 @@ export class TasksController {
     return this.tasksService.findAllByTasksListId(tasksListId);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.tasksService.findOne(id);
-  }
-
   @Patch(':id')
   update(
     @Param('id') id: string,
