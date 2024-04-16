@@ -15,7 +15,7 @@ primary_region = 'gru'
   JWT_SECRET = "mysecret"
   ALLOWED_ORIGIN = "https://viewtasks-beta.vercel.app"
 
-[[mounts]]
+[mounts]
   source = 'data'
   destination = '/data'
 
