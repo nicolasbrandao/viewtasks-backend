@@ -7,6 +7,8 @@ import { AuthModule } from './auth/auth.module';
 import { TaskslistsModule } from './tasks-lists/tasks-lists.module';
 import { TasksModule } from './tasks/tasks.module';
 import { LoggerMiddleware } from 'middlewares/logger.middleware';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -15,9 +17,21 @@ import { LoggerMiddleware } from 'middlewares/logger.middleware';
     AuthModule,
     TaskslistsModule,
     TasksModule,
+    ThrottlerModule.forRoot([
+      {
+        ttl: 1000, // ms
+        limit: 10,
+      },
+    ]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
