@@ -20,10 +20,6 @@ export class TaskslistsService {
     });
   }
 
-  async findOne(id: string) {
-    return this.databaseService.tasksList.findUnique({ where: { id } });
-  }
-
   async update(id: string, updateTaskslistDto: Prisma.TasksListUpdateInput) {
     return this.databaseService.tasksList.update({
       where: { id },
