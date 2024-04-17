@@ -21,6 +21,8 @@ pnpm db:migrate dev
 pnpm start:dev
 ```
 
+Set the env var as the `.env.example` file.
+
 # API Endpoints
 
 You can checkout the docs through swagger here: [ViewTasks API Documentation](https://viewtasks-backend.fly.dev/docs)
