@@ -1,4 +1,4 @@
-# ViewTasks API - Just To-Do it!
+# ✅ ViewTasks API - Just To-Do it!
 ## Description
 
 This is the API for ViewTasks - Just To-Do it! App. It provides endpoints for user authentication, managing task lists, and performing CRUD operations on tasks within those lists.
